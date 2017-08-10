@@ -1,0 +1,23 @@
+      <h1 class="text-center">Ingredients</h1>
+      <p>
+        <%= link_to "Home Page", root_path, class: "btn btn-primary" %>
+        <%= link_to "Add Ingredient", new_ingredient_path, class: "btn btn-primary" %>
+      </p>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @ingredients.each do |ingredient| %>
+            <tr>
+              <td><%= link_to ingredient.name, ingredient_path(ingredient) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <p>
+        <%= link_to "Cocktails", cocktails_path, class: "btn btn-primary"  %>
+        <%= link_to "Ingredients", ingredients_path, class: "btn btn-primary"  %>
+      </p>

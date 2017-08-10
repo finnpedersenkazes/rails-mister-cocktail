@@ -1,0 +1,10 @@
+      <h1 class="text-center">Update Dose</h1>
+      <%= simple_form_for(@cocktail_ingredient_relation) do |f| %>
+        <%= f.error_notification %>
+        <%= f.association :cocktail %>
+        <%= f.association :ingredient %>
+        <%= f.input :description, placeholder:"Description", label: "Description" %>
+        <%= f.button :submit, "Update Dose", class: "btn btn-primary" %>
+        <%= link_to "Cancel", :back, class: "btn btn-warning" %>
+        <%= link_to "Doses", cocktail_ingredient_relations_path, class: "btn btn-primary"  %>
+      <% end %>

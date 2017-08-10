@@ -1,0 +1,9 @@
+      <h1 class="text-center">New Dose</h1>
+      <%= simple_form_for(@cocktail_ingredient_relation) do |f| %>
+        <%= f.error_notification %>
+        <%= f.association :cocktail %>
+        <%= f.association :ingredient %>
+        <%= f.input :description, placeholder:"Description", label: false %>
+        <%= f.button :submit, "Add Dose", class: "btn btn-primary" %>
+        <%= link_to "Doses", cocktail_ingredient_relations_path, class: "btn btn-primary"  %>
+      <% end %>

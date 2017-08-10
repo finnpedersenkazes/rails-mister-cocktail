@@ -1,0 +1,8 @@
+      <h1 class="text-center">Update Cocktail</h1>
+      <%= simple_form_for(@cocktail) do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :name, placeholder:"Name", label: "Name" %>
+        <%= f.button :submit, "Update Cocktail", class: "btn btn-primary" %>
+        <%= link_to "Cancel", :back, class: "btn btn-warning" %>
+        <%= link_to "Cocktails", cocktails_path, class: "btn btn-primary"  %>
+      <% end %>

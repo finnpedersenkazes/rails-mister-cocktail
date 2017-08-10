@@ -1,0 +1,29 @@
+      <h1 class="text-center">Ingredient</h1>
+      <p>
+        <strong>Name: </strong>
+        <%= @ingredient.name %>
+      </p>
+<p class="text-center">
+  <%= link_to "Edit", edit_ingredient_path(@ingredient), class: "btn btn-warning " %>
+  <%= link_to "Delete", ingredient_path(@ingredient), method: :delete, class: "btn btn-danger" %>
+  <%= link_to "Ingredients", ingredients_path, class: "btn btn-primary"  %>
+</p>
+<h2 class="text-center">Doses</h2>
+<%= link_to 'Add Dose', new_cocktail_ingredient_relation_path(ingredient_id: @ingredient.id), class: "btn btn-primary" %>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Cocktail</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ingredient.cocktail_ingredient_relations.each do |cocktail_ingredient_relation| %>
+      <tr>
+        <td><%= link_to cocktail_ingredient_relation.cocktail.name, cocktail_ingredient_relation.cocktail %></td>
+        <td><%= link_to cocktail_ingredient_relation.description, cocktail_ingredient_relation %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

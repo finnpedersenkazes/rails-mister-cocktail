@@ -1,0 +1,8 @@
+      <h1 class="text-center">Update Ingredient</h1>
+      <%= simple_form_for(@ingredient) do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :name, placeholder:"Name", label: "Name" %>
+        <%= f.button :submit, "Update Ingredient", class: "btn btn-primary" %>
+        <%= link_to "Cancel", :back, class: "btn btn-warning" %>
+        <%= link_to "Ingredients", ingredients_path, class: "btn btn-primary"  %>
+      <% end %>

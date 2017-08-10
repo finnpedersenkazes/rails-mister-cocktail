@@ -1,0 +1,18 @@
+      <h1 class="text-center">Dose</h1>
+      <p>
+        <strong>Cocktail: </strong>
+        <%= link_to @cocktail_ingredient_relation.cocktail.name, @cocktail_ingredient_relation.cocktail %>
+      </p>
+      <p>
+        <strong>Ingredient: </strong>
+        <%= link_to @cocktail_ingredient_relation.ingredient.name, @cocktail_ingredient_relation.ingredient %>
+      </p>
+      <p>
+        <strong>Description: </strong>
+        <%= @cocktail_ingredient_relation.description %>
+      </p>
+<p class="text-center">
+  <%= link_to "Edit", edit_cocktail_ingredient_relation_path(@cocktail_ingredient_relation), class: "btn btn-warning " %>
+  <%= link_to "Delete", cocktail_ingredient_relation_path(@cocktail_ingredient_relation), method: :delete, class: "btn btn-danger" %>
+  <%= link_to "Doses", cocktail_ingredient_relations_path, class: "btn btn-primary"  %>
+</p>
