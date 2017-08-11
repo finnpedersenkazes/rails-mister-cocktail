@@ -1,9 +1,12 @@
       <h1 class="text-center">Ingredient</h1>
-      <p>
+      <p class="text-center">
         <strong>Name: </strong>
         <%= @ingredient.name %>
-        <% if @product.photo? %>
-          <%= cl_image_tag @product.photo.path, width: 200, height: 300, crop: :fill %>
+      </p>
+
+      <p class="text-center">
+        <% if @ingredient.photo? %>
+          <%= cl_image_tag @ingredient.photo.path, width: 200, height: 300, crop: :fit %>
         <% end %>
       </p>
 <p class="text-center">
