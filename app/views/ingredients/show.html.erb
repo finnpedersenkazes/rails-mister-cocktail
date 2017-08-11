@@ -2,6 +2,9 @@
       <p>
         <strong>Name: </strong>
         <%= @ingredient.name %>
+        <% if @product.photo? %>
+          <%= cl_image_tag @product.photo.path, width: 200, height: 300, crop: :fill %>
+        <% end %>
       </p>
 <p class="text-center">
   <%= link_to "Edit", edit_ingredient_path(@ingredient), class: "btn btn-warning " %>

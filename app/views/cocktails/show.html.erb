@@ -2,6 +2,9 @@
       <p>
         <strong>Name: </strong>
         <%= @cocktail.name %>
+        <% @product.photos.each do |photo| %>
+          <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+        <% end %>
       </p>
 <p class="text-center">
   <%= link_to "Edit", edit_cocktail_path(@cocktail), class: "btn btn-warning " %>
